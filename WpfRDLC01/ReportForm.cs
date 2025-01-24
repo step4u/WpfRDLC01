@@ -5,9 +5,11 @@ using Newtonsoft.Json.Schema;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
 using System.Runtime.Remoting.Contexts;
+using System.Windows.Controls;
 using System.Windows.Forms;
 using DataSet = System.Data.DataSet;
 
@@ -29,6 +31,30 @@ namespace WpfRDLC01
             pageSettings.Margins = new Margins(pMargin, pMargin, pMargin, pMargin);
             
             reportViewer1.SetPageSettings(pageSettings);
+            reportViewer1.ContextMenuChanged += ReportViewer1_ContextMenuChanged;
+            reportViewer1.ContextMenuStripChanged += ReportViewer1_ContextMenuStripChanged;
+            reportViewer1.ControlAdded += ReportViewer1_ControlAdded;
+            reportViewer1.ControlRemoved += ReportViewer1_ControlRemoved;
+        }
+
+        private void ReportViewer1_ControlRemoved(object sender, ControlEventArgs e)
+        {
+            
+        }
+
+        private void ReportViewer1_ControlAdded(object sender, ControlEventArgs e)
+        {
+            
+        }
+
+        private void ReportViewer1_ContextMenuStripChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void ReportViewer1_ContextMenuChanged(object sender, EventArgs e)
+        {
+            
         }
 
         private void ReportForm_Load(object sender, EventArgs e)
